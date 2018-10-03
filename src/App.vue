@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <div class="block">
+      <span class="wrapper">
+        <el-button type="success">成功按钮</el-button>
+      </span>
+    </div>
     <router-view/>
   </div>
 </template>
