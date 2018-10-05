@@ -30,4 +30,7 @@ body{
   text-align: center;
   color: #2c3e50;
 }
+.el-main{
+  padding-bottom: 10vh;
+}
 </style>

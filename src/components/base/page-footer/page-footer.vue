@@ -1,8 +1,15 @@
 <template>
   <div class="page-footer el-footer">
     <el-button-group>
-      <el-button router-link="{path:'/'}" type="primary" icon="el-icon-arrow-left">首页</el-button>
-      <el-button router-link="{path:'/user'}" type="primary">我的<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+      <router-link :to="{ path: '/' }" class="vlink">
+        <el-button type="primary" icon="el-icon-menu">
+          首页
+        </el-button>
+      </router-link>
+      <el-button type="primary">
+        <router-link :to="{ path: '/user' }" class="vlink">我的</router-link>
+        <i class="el-icon-setting el-icon--right"></i>
+      </el-button>
     </el-button-group>
   </div>
 </template>
@@ -23,5 +30,9 @@ export default {}
 }
 .page-footer .el-button{
   width: 50%;
+}
+.page-footer .el-button .vlink{
+  color: #fff;
+  text-decoration: none;
 }
 </style>
