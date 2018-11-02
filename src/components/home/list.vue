@@ -17,10 +17,11 @@
 </template>
 
 <script>
+import middle from '../../utils/middleware..js'
 export default {
   data () {
     return {
-      ops: '进去看看'
+      ops: '进去看看'      
     }
   },
   props: {
@@ -29,8 +30,8 @@ export default {
     }
   },
   methods: {
-    childDetail (){
-      this.$emit('childByPagefooter', this.op.item)
+    childDetail () {
+      middle.$emit('value', this.op.item)
     }
   }
 }

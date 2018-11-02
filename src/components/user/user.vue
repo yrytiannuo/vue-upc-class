@@ -17,7 +17,7 @@
 export default {
   data () {
     return {
-      imageUrl: '/static/2.jpg'
+      imageUrl: ''
     }
   },
   methods: {

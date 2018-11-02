@@ -1,43 +1,26 @@
 <template>
   <div class="detail">
-    <!-- <el-tree
-      :data="data"
-      :props="defaultProps"
-      accordion
-      @node-click="handleNodeClick">
-    </el-tree> -->
     <el-cascader
       :options="options"
       :show-all-levels="false">
     </el-cascader>
-    <el-button type="primary">查询</el-button>
+    <el-button type="primary" v-on:click="handleNodeClick">查询</el-button>
+    <div class="idleness">
+      <el-progress type="circle" :percentage="25"></el-progress>
+      <span>教室空闲率</span>
+    </div>
+    <div class="class">
+      <el-progress v-if="current" type="circle" :percentage="100" status="success"></el-progress>
+      <el-progress v-else type="circle" :percentage="100" status="exception"></el-progress>
+      <span>正上课吗？</span>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   data () {
     return {
-      data: [{
-        label: '一楼',
-        children: [{
-          label: '101'
-        }]
-      }, {
-        label: '二楼',
-        children: [{
-          label: '201'
-        }, {
-          label: '202'
-        }]
-      }, {
-        label: '三楼',
-        children: [{
-          label: '301'
-        }, {
-          label: '302'
-        }]
-      }],
+      current: false,
       defaultProps: {
         children: 'children',
         label: 'label'
@@ -75,7 +58,6 @@ export default {
   methods: {
     handleNodeClick (data) {
       if (data.children === undefined) {
-        console.log(data.label)
         var ele = '教室共有座位100个，剩余座位20个，较为拥挤'
         this.open(ele)
       }
@@ -95,13 +77,22 @@ export default {
 }
 </script>
 <style>
-.el-message-box{
+.detail .idleness,
+.detail .class{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5vh;
+}
+.detail .el-message-box{
   width: 100%;
 }
-.el-cascader {
+.detail .el-cascader {
   display: block;
 }
 .detail .el-button{
   margin-top: 3vh;
+  display:block;
+  margin:3vh auto;
 }
 </style>

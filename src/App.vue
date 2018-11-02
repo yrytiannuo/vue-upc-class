@@ -12,7 +12,7 @@
 <script>
 import vheader from '@/components/base/page-header/page-header'
 import vfooter from '@/components/base/page-footer/page-footer'
-
+import middle from './utils/middleware..js'
 export default {
   name: 'App',
   data () {
@@ -24,8 +24,15 @@ export default {
   methods: {
     childByPagefooter: function (childByValue) {
       this.header = childByValue
-      console.log(this.header)
     }
+  },
+  mounted: function () {
+    var vm = this
+    // 用$on事件来接收参数
+    middle.$on('value', (data) => {
+      console.log(data);
+      vm.header = data
+    })
   }
 }
 </script>
