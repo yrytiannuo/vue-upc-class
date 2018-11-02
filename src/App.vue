@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <el-container class="is-vertical">
-      <vheader></vheader>
+      <vheader :pos="header"></vheader>
       <el-main>
         <router-view/>
       </el-main>
-      <vfooter></vfooter>
+      <vfooter v-on:childByPagefooter="childByPagefooter"></vfooter>
     </el-container>
   </div>
 </template>
@@ -15,7 +15,18 @@ import vfooter from '@/components/base/page-footer/page-footer'
 
 export default {
   name: 'App',
-  components: {vheader, vfooter}
+  data () {
+    return {
+      header: '首页'
+    }
+  },
+  components: {vheader, vfooter},
+  methods: {
+    childByPagefooter: function (childByValue) {
+      this.header = childByValue
+      console.log(this.header)
+    }
+  }
 }
 </script>
 

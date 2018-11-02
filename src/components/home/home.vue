@@ -12,19 +12,19 @@ export default {
   data () {
     return {
       ops: [{
-        item: '南教',
+        item: '讲堂群',
         bg: '/static/1.jpg',
         id: 1
       }, {
-        item: '西环',
+        item: '南唐',
         bg: '/static/2.jpg',
         id: 2
       }, {
-        item: '东廊',
+        item: '南教',
         bg: '/static/3.jpg',
         id: 3
       }, {
-        item: '南唐',
+        item: '文理楼',
         bg: '/static/4.jpg',
         id: 4
       }

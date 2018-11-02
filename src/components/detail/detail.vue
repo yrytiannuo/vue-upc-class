@@ -1,11 +1,11 @@
 <template>
   <div class="detail">
-    <el-tree
+    <!-- <el-tree
       :data="data"
       :props="defaultProps"
       accordion
       @node-click="handleNodeClick">
-    </el-tree>
+    </el-tree> -->
     <el-cascader
       :options="options"
       :show-all-levels="false">

@@ -3,8 +3,10 @@
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>{{op.item}}</span>
-        <el-button style="float: right; padding: 3px 0" type="text">
-          <router-link :to="{ path: '/detail' }" class="vlink">{{op.item}}</router-link>
+        <el-button style="float: right; padding: 3px 0" type="text" v-on:click="childDetail">
+          <router-link :to="{ path: '/detail' }" class="vlink">{{ops}}
+            <i class="el-icon-arrow-right el-icon--right"></i>
+          </router-link>
         </el-button>
       </div>
       <div class="el-card_bg" :style="{'background-image': 'url(' + op.bg + ')'}"></div>
@@ -16,15 +18,31 @@
 
 <script>
 export default {
+  data () {
+    return {
+      ops: '进去看看'
+    }
+  },
   props: {
     op: {
       type: Object
+    }
+  },
+  methods: {
+    childDetail (){
+      this.$emit('childByPagefooter', this.op.item)
     }
   }
 }
 </script>
 
 <style>
+.clearfix span{
+  display: block;
+}
+.vlink{
+  text-decoration: none;
+}
 .list .el-card__body{
   padding: 0;
 }

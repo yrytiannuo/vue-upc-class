@@ -7,10 +7,8 @@
 
 <script>
 export default {
-  data () {
-    return {
-      pos: '位置'
-    }
+  props: {
+    pos: String
   }
 }
 </script>
