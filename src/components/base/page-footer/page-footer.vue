@@ -2,7 +2,7 @@
   <div class="page-footer el-footer">
     <el-button-group>
         <el-button type="primary" icon="el-icon-menu" v-on:click="childHome">
-          <router-link :to="{ path: '/' }" class="vlink">首页</router-link>
+          <router-link :to="{ path: '/' }" class="vlink">{{childhome}}</router-link>
         </el-button>
         <el-button type="primary" v-on:click="childUser">
           <router-link :to="{ path: '/user' }" class="vlink">我的</router-link>
@@ -27,6 +27,7 @@ export default {
     childHome () {
       this.$emit('childByPagefooter', this.childhome)
     }
+
   }
 }
 </script>

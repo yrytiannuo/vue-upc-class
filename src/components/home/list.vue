@@ -21,7 +21,7 @@ import middle from '../../utils/middleware..js'
 export default {
   data () {
     return {
-      ops: '进去看看'      
+      ops: '进去看看'
     }
   },
   props: {

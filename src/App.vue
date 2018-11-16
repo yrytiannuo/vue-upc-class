@@ -30,7 +30,6 @@ export default {
     var vm = this
     // 用$on事件来接收参数
     middle.$on('value', (data) => {
-      console.log(data);
       vm.header = data
     })
   }
